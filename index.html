@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Prise de rendez-vous medicale</title>
+        <style>
+            .header {
+                display:flex;
+                height:40px;
+                top: 0; /* Place la barre en haut de la page */
+                width: 100%;
+                position: fixed;
+                z-index: 1000;
+            }
+            .header-img{
+                width: 20%;
+            }
+            .logo{
+                width: 100%;
+            }
+            .header-droite{
+                display:flex;
+                width: 80%;
+                background-color: rgb(38, 38, 98);
+            }
+            .div-med{
+                margin-left:50%;
+                width: 25%;
+                margin-right:2%;
+            }
+            .div-con{
+                width: 20%;
+                padding-top:0.2%;
+            }
+            .med,.con{
+                color:white;
+                margin-top:5%;
+                font-size:120%;
+                border:1px solid white;
+                text-align:center;
+                background-color: gray;
+                border-radius:5px;
+            }
+
+            
+            .photo{
+                width : 100%;
+                height: 600px;
+            }
+
+            .logo{
+                width: 70%;
+                height: 50%;
+                padding-top: 2%;
+                margin-right: 50%;
+            }
+
+            .bottom {
+                display: flex;
+                position: absolute;
+                margin-top:-2%;
+                justify-content: space-around;
+                height: 100px;
+            }
+
+            .tab1,
+            .tab2,
+            .tab3 {
+                width: 30%;
+                height: 100px;
+                background-color: white;
+                display: flex;
+                border-radius:25px;
+                border:1px solid aliceblue;
+                padding-left:2%;
+                font-size: 100%;
+            }
+            .tab1:hover,
+            .tab2:hover,
+            .tab3:hover{
+                background-color:rgb(239, 244, 248);
+            }
+            
+
+            .container {
+                position: relative;
+                color: white; /* Couleur du texte */
+            }
+
+            .text {
+                color:black;
+                position: absolute;
+                top: 5%; /* Position verticale du texte */
+                left: 1%; /* Position horizontale du texte */
+            }
+            .rech{
+                position: absolute;
+                top: 40%;
+                border:none;
+                width: 50%;
+                margin-left:25%;
+            }
+            form{
+                display:flex;
+            }
+            .div-input1{
+                width: 40%;
+                border-radius: 15px 0 0 15px;
+                border:1px solid black;
+            }
+            .div-input2{
+                width: 38%;
+                border:1px solid black;
+            }
+            .div-input3{
+                width: 22%;
+                border:1px solid black;
+                border-radius: 0 15px 15px 0;
+            }
+            input{
+                border:none;
+                width: 100%;
+                height: 40px;
+                background-color: rgba(235, 244, 248, 0.5);
+                
+            }
+            #btn{
+                height: 42px;
+                border-radius: 0 15px 15px 0;
+                background-color: rgb(38, 38, 98);
+                color:white;
+                font-family:fantasy;
+                font-size:110%;
+            }
+
+            .bottom_img{
+                width:60%;
+                height:90px;
+            }
+
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                color:coral;
+                text-decoration:underline;
+            }
+
+            .praticien{
+                border: 1px solid black;
+                display: flex;
+                background-color: rgb(38, 38, 98);
+                color: white;
+                border-radius:10px;
+                width: 80%;
+                margin-left:10%;
+                margin-top:10%;
+            }
+
+            .img-praticien{
+                width: 30%;
+            }
+            .text-praticien{
+                width: 70%;
+            }
+            .button{
+                color: white;
+                font-family:monospace;
+                font-size:150%;
+                width: 25%;
+                text-align: center;
+                border-radius:15px;
+                background-color: rgb(75, 40, 204);
+            }
+
+            .med_pat{
+                width: 70%;
+                margin:15%;
+            }
+            h2{
+                
+            }
+
+            .anim {
+                border:1px solid black;
+                border-radius:10px;
+                margin-top:-3%;
+                width: 50%;
+                margin-bottom:2%;
+                height: 40px; /* Ajustez la hauteur selon vos besoins */
+                overflow: hidden;
+                background-color: rgb(38, 38, 98);
+            }
+
+            .anim p {
+                
+                color:white;
+                margin-top:1%;
+                font-size:150%;
+                position: absolute;
+                opacity: 0;
+                animation: fadeInOut 10s infinite;
+            }
+
+            #tett1 {
+                animation-delay: 0s;
+            }
+
+            #tett2 {
+                animation-delay: 4s;
+            }
+
+            #tett3 {
+                animation-delay: 8s;
+            }
+
+            #tett4 {
+                animation-delay: 12s;
+            }
+
+            #tett5 {
+                animation-delay: 16s;
+            }
+            h2{
+                color:black;
+            }
+            ul{
+                font-size:150%;
+            }
+
+            @keyframes fadeInOut {
+                0%, 20% { opacity: 0; }/*invisible */
+                30%, 50% { opacity: 1; }/*visible*/
+                50%, 100% { opacity: 0; }/*invisible */
+            }
+
+            @media screen and (max-width: 650px) {
+                .header{
+                    width: 100%;
+                    height: 20%;
+                }
+                .header-img{
+                width: 15%;
+            }
+            .logo{
+                margin-top:5%;
+                width: 100%;
+            }
+            .photo{
+                width : 100%;
+                height: 600px;
+            }
+            .header-droite{
+                width: 85%;
+            }
+            .div-med{
+                margin-left:30%;
+                width: 40%;
+                margin-right:2%;
+            }
+            .div-con{
+                width: 25%;
+                padding-top:0.5%;
+            }
+            .med,.con{
+                color:white;
+                margin-top:5%;
+                font-size:80%;
+                border:1px solid white;
+                text-align:center;
+                background-color: gray;
+                border-radius:5px;
+            }
+            .bottom{
+                display: block;
+                
+            }
+            .tab1,.tab2,.tab3{
+                width: 100%;
+                height: 60px;
+                border-radius: 0px;
+            }
+            .gauche{
+                width: 20%;
+            }
+            .droite{ 
+                width: 80%;
+            }
+
+            p{
+                margin-top: 1%;
+            }
+            
+            .bottom_img{
+                width:50%;
+                height:50px;
+            }
+
+            .logo{
+                padding-top: 0%;
+                margin-right: 50%;
+            }
+            .praticien{
+                display: block;
+                border-radius:10px;
+                width: 90%;
+                margin-left:5%;
+                margin-top:30%;
+            }
+            .img-praticien{
+                width: 100%;
+            }
+            .text-praticien{
+                width: 100%;
+            }
+            .med_pat{
+                width: 70%;
+                margin:0%;
+                margin-left:15%;
+                margin-top:10%;
+            }
+            .button{
+                font-size:150%;
+                width: 40%;
+                background-color: rgb(75, 40, 204);
+            }
+            .rech{
+                width: 100%;
+                margin-left:0%;
+            }
+            .anim {
+                width: 70%;
+            }
+
+            .div-input1{
+                width: 40%;
+            }
+            .div-input2{
+                width: 38%;
+            }
+            .div-input3{
+                width: 22%;
+            }
+            input{
+                border:none;
+                width: 100%;
+                height: 30px;
+            }
+            #btn{
+                height: 33px;
+                color:white;
+                font-size:80%;
+            }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class='header'>
+            <div class="header-img">
+                <img src='images/logo.jpg' class='logo'>
+            </div>
+            <div class="header-droite">
+                <div class="div-med"><a href='View/ViewMedecin/formulaireMed.php'><div class='med'>MEDECIN ? REJOIGNEZ-NOUS</div></a></div>
+                <div class="div-con"><a href='View/login.php'><div class='con'>SE CONNECTER</div></a></div>
+            </div>
+        </div>
+        <div class='container'>
+            <img src='images/acueilg.jpg' class='photo'>
+            <div class="text">
+                <p>DOCTOR vous permet prendre</br>
+                     un rendez-vous en ligne avec un médecin</br>
+                     et c'est gratit
+                </p>
+            </div>
+            <div class="rech">
+                <h2>Trouvez un rendez-vous avec</h2>
+                <div class="anim">
+                    <p id="tett1">Infirmier</p>
+                    <p id="tett2">Chirurgien-dentiste</p>
+                    <p id="tett3">Médecin généraliste</p>
+                    <p id="tett4">Ophtalmologue</p>
+                    <p id="tett5">Masseur-kinésithérapeute</p>
+                </div>
+                <form action="#" method="post">
+                    <div class="div-input1">
+                        <input type="text" name="nom" id="nom" placeholder="Nom,spécialité,établissement,...">
+                    </div>
+                    <div class="div-input2">
+                        <input type="text" name="lieu" id="lieu" placeholder="Où">
+                    </div>
+                    <div class="div-input3">
+                        <input type="submit" name="btn" id="btn" value="Rechercher">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class='bottom'>
+            <div class='tab1'>
+                <div class='gauche'>
+                    <img src='images/rdv.png' class='bottom_img'>
+                </div>
+                <div class='droite'>
+                    <a href='View/formRdv.php' style="font-size:100%;color:rgb(38, 38, 98);">Prendre RDV</a>
+                    <p>Choirsir votre medecin et prendre un rendez-vous</p>
+                </div>
+            </div>
+            
+            <div class='tab2'>
+                <div class='gauche'>
+                    <img src='images/gRdv.jpeg' class='bottom_img'>
+                </div>
+                <div class='droite'>
+                    <a href='View/viewInfirmier.html' style="font-size:100%;color:rgb(38, 38, 98);">Gérer rendez-vous</a>
+                    <p>Modifier ou annuler vos rendez-vous</p>
+                </div>
+            </div>
+            
+            <div class='tab3'>
+                <div class='gauche'>
+                    <img src='images/besoin.png' class='bottom_img'>
+                </div>
+                <div class='droite'>
+                    <a href='#' style="font-size:100%;color:rgb(38, 38, 98);">Besoin d'aide</a>
+                    <p>Comment ça marche ?</p>
+                </div>
+            </div>
+        </div>
+        <div class="praticien">
+            <div class="img-praticien">
+                <img src="images/med_patient.jpg" class="med_pat">
+            </div>
+            <div class="text-praticien">
+                <h2>Vous êtes praticien ?</h2>
+                <p>Équipez-vous du logiciel Doctor pour gagner en confort de travail.</p>
+                <ul>
+                    <li>Libérez du temps médical grâce à la prise de rendez-vous en ligne et un logiciel moderne</li>
+                    <li>Développez l'activité de votre cabinet selon vos besoins grâce à une meilleure visibilité en ligne</li>
+                    <li>Gagnez en confort de travail au quotidien en réduisant les appels téléphoniques à votre cabinet</li>
+                    <li>Améliorez l'accès aux soins pour vos patients en leur proposant la meilleure des expériences</li>
+                </ul>
+                <a href="#"><div class="button">DECOUVRIR DOCTOR</div></a>
+            </div>
+        </div>
+        <hr>
+    </body>
+        
+    <?php include ('View/footerA.php')?>
+</html>
